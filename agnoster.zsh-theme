@@ -138,6 +138,9 @@ prompt_virtualenv() {
   if [[ -d $VIRTUAL_ENV ]]; then
     prompt_segment blue white
     print -Pn " $(basename $VIRTUAL_ENV) "
+  elif [[ -d $CONDA_PREFIX ]]; then
+    prompt_segment blue white
+    print -Pn " $CONDA_DEFAULT_ENV "
   fi
 }
 
